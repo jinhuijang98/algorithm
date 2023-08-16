@@ -1,3 +1,5 @@
+
+
 T = 10
 for tc in range(1, T+1):
     n = int(input())
@@ -21,6 +23,7 @@ for tc in range(1, T+1):
                 top += 1  # push
                 stack[top] = x
     # stack 안에 연산자가 남아있는 경우가 있어서 이걸 다 빼줌!!
+    # 마지막에 * 다음 +가 나오는경우
     for i in range(top+1):
         susik += stack[top]
         top -=1
@@ -43,3 +46,4 @@ for tc in range(1, T+1):
                 top += 1
                 stack[top] = op1 * op2
     print(f'#{tc} {stack[top]}')
+
