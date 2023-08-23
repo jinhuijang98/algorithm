@@ -1,4 +1,3 @@
-
 for tc in range(1, 11):
     # 테이블의 크기 : 항상 100
     N = int(input())
