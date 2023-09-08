@@ -1,24 +1,26 @@
-import sys
-input = sys.stdin.readline
+n = int(input())
 
-n = int(input().strip())
+arr = list(map(int, input().split()))
 
-arr = list(map(int, input().strip().split()))
-
-arr2 = arr.copy()
-budget = int(input().strip())
+budget = int(input())
 
 if sum(arr) <= budget:
     print(max(arr))
 else:
-    # 예산의 평균을 우선 기준으로 잡음
-    flag = budget // n
-    while sum(arr) >= budget:
-        for i in range(n):
-            if arr2[i] > flag:
-                arr2[i] = flag
-        if sum(arr2) > budget:
+    start = 0
+    end = sum(arr)
+    while start <= end:
+        s = 0
+        mid = (start+end)//2
+        if mid == start:
             break
-        arr2 = arr.copy()
-        flag += 1
-    print(flag-1)
+        for i in arr:
+            if i <= mid:
+                s += i
+            else:
+                s += mid
+        if s > budget:
+            end = mid
+        else:
+            start = mid
+    print(mid)
