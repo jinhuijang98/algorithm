@@ -18,6 +18,7 @@ for i in range(n-x):
 
 cnt = 0
 k = sum(arr[0:x])
+# 초기값이 max_v와 같다면 cnt +=1
 if k == max_v:
     cnt += 1
 for i in range(n-x):
